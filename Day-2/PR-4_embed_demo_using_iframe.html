@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Embedding Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Iframe Integration Examples</h1>
+
+    <!-- Example 1: Embedding a Website -->
+    <div class="container">
+        <h2>1. External Website</h2>
+        <p>This embeds a Wikipedia page directly into this section.</p>
+        <iframe 
+            src="https://en.wikipedia.org/wiki/Main_Page" 
+            title="Wikipedia Example">
+        </iframe>
+    </div>
+
+    <!-- Example 2: YouTube Video (The common use case) -->
+    <div class="container">
+        <h2>2. YouTube Video</h2>
+        <p>To embed YouTube, you must use their "embed" URL format.</p>
+        <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</body>
+</html>

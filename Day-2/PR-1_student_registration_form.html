@@ -3,22 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Form</title>
+    <title>Animated Student Form</title>
     
-    <!-- External CSS Link -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Internal CSS for Name, Enrollment, Branch, and Gender -->
     <style>
+        /* 1. Body Animation: Moving Gradient */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 2. Form Container Animation: Slide & Fade In */
+        form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 500px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header nav {
+            margin-bottom: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        header a:hover {
+            color: #e73c7e;
+        }
+
+        /* Styling for inputs */
         #name, #enrollment, #branch {
             border: 2px solid #4CAF50;
             border-radius: 4px;
-            padding: 5px;
+            padding: 8px;
+            width: 95%;
         }
 
-        /* Styling for the radio buttons and labels */
         input[type="radio"] {
             margin-left: 10px;
+        }
+
+        /* Hover effect for buttons */
+        input[type="submit"], input[type="reset"] {
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -34,19 +102,16 @@
         </nav>
     </header>
 
-    <hr>
-
-    <h2>Student Registration Form</h2>
+    <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Student Registration Form</h2>
 
     <form>
-        <!-- Managed by Internal CSS -->
-        <label>Name:</label>
+        <label><b>Name:</b></label><br>
         <input type="text" id="name" name="name"><br><br>
 
-        <label>Enrollment No:</label>
+        <label><b>Enrollment No:</b></label><br>
         <input type="text" id="enrollment" name="enrollment"><br><br>
 
-        <label>Branch:</label>
+        <label><b>Branch:</b></label><br>
         <select id="branch" name="branch">
             <option value="">Select Branch</option>
             <option value="CE">Computer Engineering</option>
@@ -55,36 +120,34 @@
             <option value="EE">Electrical Engineering</option>
         </select><br><br>
 
-        <!-- Managed by Inline CSS -->
-        <label>Division:</label>
-        <input type="text" id="division" name="division" style="background-color: #e8f0fe;"><br><br>
+        <label><b>Division:</b></label><br>
+        <input type="text" id="division" name="division" style="background-color: #e8f0fe; width: 95%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"><br><br>
 
-        <!-- Managed by Internal CSS -->
-        <label>Gender:</label>
+        <label><b>Gender:</b></label>
         <input type="radio" id="male" name="gender" value="Male">
         <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="Female">
         <label for="female">Female</label><br><br>
 
-        <!-- Remaining inputs managed by Inline CSS -->
-        <label>Mobile No:</label>
-        <input type="tel" id="mobile" name="mobile" style="border: 1px solid blue;"><br><br>
+        <label><b>Mobile No:</b></label><br>
+        <input type="tel" id="mobile" name="mobile" style="border: 1px solid blue; width: 95%; padding: 8px; border-radius: 4px;"><br><br>
 
-        <label>Email:</label>
-        <input type="email" id="email" name="email" style="border: 1px solid blue;"><br><br>
+        <label><b>Email:</b></label><br>
+        <input type="email" id="email" name="email" style="border: 1px solid blue; width: 95%; padding: 8px; border-radius: 4px;"><br><br>
 
-        <label>Password:</label>
-        <input type="password" id="password" name="password" style="border: 1px solid blue;"><br><br>
+        <label><b>Password:</b></label><br>
+        <input type="password" id="password" name="password" style="border: 1px solid blue; width: 95%; padding: 8px; border-radius: 4px;"><br><br>
 
-        <label>Upload Photo:</label>
+        <label><b>Upload Photo:</b></label>
         <input type="file" id="photo" name="photo" style="color: gray;"><br><br>
 
-        <label>Remarks:</label><br>
-        <textarea id="remarks" name="remarks" rows="4" cols="30" style="box-shadow: 2px 2px 5px #ccc;"></textarea><br><br>
+        <label><b>Remarks:</b></label><br>
+        <textarea id="remarks" name="remarks" rows="4" style="box-shadow: 2px 2px 5px #ccc; width: 95%; border-radius: 4px; border: 1px solid #ccc;"></textarea><br><br>
 
-        <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">
-        <input type="reset" value="Clear" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
-
+        <div style="text-align: center;">
+            <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 25px; cursor: pointer; border-radius: 5px; font-weight: bold;">
+            <input type="reset" value="Clear" style="background-color: #f44336; color: white; border: none; padding: 10px 25px; cursor: pointer; border-radius: 5px; font-weight: bold;">
+        </div>
     </form>
 
 </body>

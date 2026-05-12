@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS for Name, Enrollment, Branch, and Gender -->
+    <style>
+        #name, #enrollment, #branch {
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        /* Styling for the radio buttons and labels */
+        input[type="radio"] {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#">Home</a> | 
+            <a href="#">Signup</a> | 
+            <a href="#">Signin</a> | 
+            <a href="#">About</a> | 
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <h2>Student Registration Form</h2>
+
+    <form>
+        <!-- Managed by Internal CSS -->
+        <label>Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label>Enrollment No:</label>
+        <input type="text" id="enrollment" name="enrollment"><br><br>
+
+        <label>Branch:</label>
+        <select id="branch" name="branch">
+            <option value="">Select Branch</option>
+            <option value="CE">Computer Engineering</option>
+            <option value="IT">Information Technology</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="EE">Electrical Engineering</option>
+        </select><br><br>
+
+        <!-- Managed by Inline CSS -->
+        <label>Division:</label>
+        <input type="text" id="division" name="division" style="background-color: #e8f0fe;"><br><br>
+
+        <!-- Managed by Internal CSS -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br><br>
+
+        <!-- Remaining inputs managed by Inline CSS -->
+        <label>Mobile No:</label>
+        <input type="tel" id="mobile" name="mobile" style="border: 1px solid blue;"><br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" name="email" style="border: 1px solid blue;"><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" name="password" style="border: 1px solid blue;"><br><br>
+
+        <label>Upload Photo:</label>
+        <input type="file" id="photo" name="photo" style="color: gray;"><br><br>
+
+        <label>Remarks:</label><br>
+        <textarea id="remarks" name="remarks" rows="4" cols="30" style="box-shadow: 2px 2px 5px #ccc;"></textarea><br><br>
+
+        <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+        <input type="reset" value="Clear" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+
+    </form>
+
+</body>
+</html>

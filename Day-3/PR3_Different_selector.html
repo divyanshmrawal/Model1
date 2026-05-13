@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel Selection Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 1. Level One: The Parent List (Direct descendant) */
+        /* Targets only the UL that is a direct child of .container */
+        .container > ul {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            list-style: none;
+        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Demonstration</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* --- 1. MULTIPLE SELECTOR (Grouped) --- */
+        /* Applies the same style to h1, h2, and the .highlight class at once */
+        h1, h2, .highlight {
+            color: #2c3e50;
+            text-transform: uppercase;
+            border-bottom: 2px solid #3498db;
+        }
+
+        /* --- 2. MULTILEVEL SELECTOR (Descendant) --- */
+        /* Targets 'span' tags ONLY when they are inside a 'div' */
+        div span {
+            color: #e74c3c;
+            font-weight: bold;
+            background: #fff;
+            padding: 2px 5px;
+        }
+
+        /* Targets 'li' tags ONLY when they are inside a 'nav' */
+        nav li {
+            display: inline;
+            margin-right: 15px;
+            list-style: none;
+        }
+
+        /* Combined Example: Targets 'a' tags inside 'nav li' */
+        nav li a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Selectors</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Demonstration</h2>
+        
+        <p>This is a standard paragraph.</p>
+        
+        <p class="highlight">This paragraph uses a Multiple Selector style.</p>
+
+        <div>
+            This text is inside a div, so the <span>nested span</span> is styled red.
+        </div>
+
+        <p>This <span>span</span> is outside a div, so it remains default.</p>
+    </div>
+
+</body>
+</html>
+        /* 2. Descendant Selector (Multilevel) */
+        /* Targets ALL <li> elements anywhere inside .container */
+        .container li {
+            margin: 8px 0;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* 3. Deep Nesting: Level Two */
+        /* Targets a UL that is inside an LI, which is inside a UL */
+        ul li ul {
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            margin-top: 5px;
+            list-style: circle;
+        }
+
+        /* 4. Specific Level Three Selection */
+        /* Targets an LI inside a UL, inside a UL, inside a UL */
+        ul li ul li ul li {
+            color: #e67e22;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        /* 5. Adjacent Sibling Selector */
+        /* Adds a top border to a list if it follows a heading */
+        h2 + ul {
+            margin-top: 20px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>CSS Selector Hierarchy</h2>
+        
+        <ul>
+            <li>Top Level (Level 1)
+                <ul>
+                    <li>Sub-item (Level 2)
+                        <ul>
+                            <li>Deep Nesting (Level 3) <code>ul li ul li ul li</code></li>
+                            <li>Another Deep Item</li>
+                        </ul>
+                    </li>
+                    <li>Sub-item (Level 2) <code>ul li ul</code></li>
+                </ul>
+            </li>
+            <li>Another Top Level Item <code>.container > ul > li</code></li>
+        </ul>
+    </div>
+
+</body>
+</html>

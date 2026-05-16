@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Header</title>
+    <title>Responsive Header with Grid Section</title>
     <style>
         /* Reset basic styles */
         * {
@@ -11,13 +11,15 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Enables smooth scrolling when clicking the nav link */
         }
 
         body {
             background-color: #f5f7fa;
+            color: #333;
         }
 
-        /* Header Container */
+        /* ==================== HEADER STYLES ==================== */
         .site-header {
             display: flex;
             justify-content: space-between;
@@ -103,14 +105,81 @@
             user-select: none;
         }
 
-        /* Responsive design for Mobile/Tablets */
+        /* ==================== FLEXBOX BOXES SECTION ==================== */
+        .content-section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .content-section p {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Flexbox Wrapper */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;       /* Allows boxes to wrap to the next line */
+            justify-content: center; /* Centers the boxes horizontally */
+            gap: 30px;             /* Spacing between the boxes */
+        }
+
+        /* Square Box Styling */
+        .square-box {
+            background-color: #ffffff;
+            width: 280px;
+            height: 280px;         /* Equal width and height to keep it perfectly square */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            border: 1px solid #e1e8ed;
+        }
+
+        /* Hover effect on boxes */
+        .square-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #007bff;
+        }
+
+        .square-box .box-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .square-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .square-box p {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0;
+        }
+
+        /* ==================== RESPONSIVE DESIGN (Mobile/Tablets) ==================== */
         @media (max-width: 768px) {
             .site-header {
                 padding: 15px 20px;
             }
 
             .menu-icon {
-                display: block; /* Show the 3 lines icon on smaller screens */
+                display: block;
             }
 
             .nav-links {
@@ -124,13 +193,10 @@
                 padding: 30px 20px;
                 gap: 20px;
                 box-shadow: -5px 5px 10px rgba(0,0,0,0.05);
-                
-                /* Hide menu by default off-screen */
                 transform: translateX(100%);
                 transition: transform 0.3s ease-in-out;
             }
 
-            /* When JavaScript toggles the 'active' class */
             .nav-links.active {
                 transform: translateX(0);
             }
@@ -139,25 +205,33 @@
                 width: 100%;
                 text-align: center;
             }
+
+            .content-section {
+                padding: 40px 20px;
+            }
+
+            .square-box {
+                width: 100%; /* Boxes take full width on tiny mobile screens if needed */
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header class="site-header">
-        <!-- Left Side: Logo -->
         <div class="logo">
             <a href="#">MyLogo</a>
         </div>
 
-        <!-- Right Side: Navigation & Menu Icon -->
         <div class="nav-container">
-            <!-- Three lines options logo (Hamburger Menu) -->
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
             
-            <!-- Navigation Links and Buttons -->
             <nav class="nav-links" id="navLinks">
                 <a href="#" class="nav-item">Home</a>
+                <!-- New Added Option linked to the ID of the boxes section -->
+                <a href="#servicesSection" class="nav-item" onclick="closeMenu()">Services</a>
                 <a href="#" class="nav-item">Contact</a>
                 <a href="#" class="nav-btn register-btn">Registration</a>
                 <a href="#" class="nav-btn login-btn">Login</a>
@@ -165,11 +239,58 @@
         </div>
     </header>
 
-    <!-- Simple JavaScript to make the mobile menu toggle work -->
+    <!-- Main Content Section (Targeted by the Services link) -->
+    <main class="content-section" id="servicesSection">
+        <h2>Our Services</h2>
+        <p>Explore what we offer below</p>
+
+        <!-- Flexbox Container with 6 Square Boxes -->
+        <div class="flex-container">
+            <div class="square-box">
+                <div class="box-icon"></div>
+                <h3>Web Design</h3>
+                <p>Creating clean, functional, and user-friendly digital layouts.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-icon"></div>
+                <h3>Development</h3>
+                <p>Building scalable web applications with clean architecture.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-icon"></div>
+                <h3>SEO Marketing</h3>
+                <p>Optimizing your digital footprint to reach higher rankings.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-icon"></div>
+                <h3>App Design</h3>
+                <p>Crafting interactive mobile application mockups and interfaces.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-icon"></div>
+                <h3>Cyber Security</h3>
+                <p>Keeping your digital platforms safe, robust, and well guarded.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-icon"></div>
+                <h3>Cloud Services</h3>
+                <p>Deploying application modules smoothly onto remote server architectures.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript For Navbar Functionality -->
     <script>
+        const navLinks = document.getElementById('navLinks');
+
+        // Toggle mobile sidebar
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
+        }
+
+        // Close sidebar when a mobile menu option is clicked
+        function closeMenu() {
+            navLinks.classList.remove('active');
         }
     </script>
 </body>

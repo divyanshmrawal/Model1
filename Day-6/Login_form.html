@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+        }
+
+        /* Header Container */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo Styling */
+        .logo a {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333333;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Container */
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: #007bff;
+        }
+
+        /* Button Stylings */
+        .nav-btn {
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .register-btn {
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .register-btn:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .login-btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: 2px solid #007bff;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Three-line options logo (Hidden on Desktop) */
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333333;
+            user-select: none;
+        }
+
+        /* Responsive design for Mobile/Tablets */
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 15px 20px;
+            }
+
+            .menu-icon {
+                display: block; /* Show the 3 lines icon on smaller screens */
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #ffffff;
+                width: 250px;
+                height: calc(100vh - 60px);
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 20px;
+                box-shadow: -5px 5px 10px rgba(0,0,0,0.05);
+                
+                /* Hide menu by default off-screen */
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            /* When JavaScript toggles the 'active' class */
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .nav-item, .nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <!-- Left Side: Logo -->
+        <div class="logo">
+            <a href="#">MyLogo</a>
+        </div>
+
+        <!-- Right Side: Navigation & Menu Icon -->
+        <div class="nav-container">
+            <!-- Three lines options logo (Hamburger Menu) -->
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            
+            <!-- Navigation Links and Buttons -->
+            <nav class="nav-links" id="navLinks">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">Contact</a>
+                <a href="#" class="nav-btn register-btn">Registration</a>
+                <a href="#" class="nav-btn login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Simple JavaScript to make the mobile menu toggle work -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

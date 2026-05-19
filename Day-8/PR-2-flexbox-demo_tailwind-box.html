@@ -1,68 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind CSS Flexbox Demonstration</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tailwind Flexbox Website</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans min-h-screen p-6">
+<body class="bg-gray-100">
 
-    <div class="max-w-5xl mx-auto space-y-8">
-        
-        <header class="text-center">
-            <h1 class="text-3xl font-bold text-gray-800">Tailwind CSS Flexbox Demo</h1>
-            <p class="text-gray-600 mt-2">A quick guide to alignment, direction, and spacing using Flexbox utility classes.</p>
-        </header>
+    <!-- Hero Section -->
+    <section class="flex flex-col justify-center items-center text-center h-[400px] bg-gradient-to-r from-blue-500 to-cyan-400 text-white">
 
-        <section class="bg-white p-4 rounded-xl shadow-md">
-            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">1. Navbar (Space-Between & Center)</h2>
+        <h1 class="text-5xl font-bold mb-4">
+            Welcome to My Website
+        </h1>
 
-            <nav class="flex justify-between items-center bg-blue-600 p-4 rounded-lg text-white">
-                <div class="font-bold text-xl">MyLogo</div>
-                <ul class="flex gap-6 font-medium">
-                    <li class="hover:underline cursor-pointer">Home</li>
-                    <li class="hover:underline cursor-pointer">About</li>
-                    <li class="hover:underline cursor-pointer">Services</li>
-                    <li class="hover:underline cursor-pointer">Contact</li>
-                </ul>
-            </nav>
-        </section>
+        <p class="text-xl">
+            Build modern layouts using Tailwind Flexbox
+        </p>
 
-        <section class="bg-white p-4 rounded-xl shadow-md">
-            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">2. Perfect Centering (Horizontal & Vertical)</h2>
+    </section>
 
-            <div class="flex justify-center items-center h-40 bg-gray-800 rounded-lg">
-                <div class="bg-emerald-500 text-white font-bold p-6 rounded-lg shadow-lg">
-                    I am perfectly centered!
-                </div>
-            </div>
-        </section>
+    <!-- Cards Section -->
+    <section class="flex flex-wrap justify-center gap-8 p-10">
 
-        <section class="bg-white p-4 rounded-xl shadow-md">
-            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">3. Responsive Direction & Wrap (Cards)</h2>
+        <!-- Card 1 -->
+        <div class="bg-white w-[250px] p-5 rounded-xl shadow-lg text-center">
 
-            <div class="flex flex-col sm:flex-row flex-wrap gap-4 text-center">
-                
-                <div class="flex-1 min-w-[200px] bg-purple-100 p-6 border-2 border-purple-300 rounded-lg">
-                    <h3 class="font-bold text-purple-800">Card One</h3>
-                    <p class="text-sm text-purple-600 mt-1">Flex grow helper active.</p>
-                </div>
+            <img src="https://picsum.photos/250/150?1"
+                class="rounded-lg mb-4">
 
-                <div class="flex-1 min-w-[200px] bg-orange-100 p-6 border-2 border-orange-300 rounded-lg">
-                    <h3 class="font-bold text-orange-800">Card Two</h3>
-                    <p class="text-sm text-orange-600 mt-1">Flex grow helper active.</p>
-                </div>
+            <h2 class="text-2xl font-semibold mb-2">
+                Web Design
+            </h2>
 
-                <div class="flex-1 min-w-[200px] bg-pink-100 p-6 border-2 border-pink-300 rounded-lg">
-                    <h3 class="font-bold text-pink-800">Card Three</h3>
-                    <p class="text-sm text-pink-600 mt-1">Flex grow helper active.</p>
-                </div>
+            <p class="text-gray-600 mb-4">
+                Create beautiful responsive websites easily.
+            </p>
 
-            </div>
-        </section>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded">
+                Read More
+            </button>
 
-    </div>
+        </div>
 
+        <!-- Card 2 -->
+        <div class="bg-white w-[250px] p-5 rounded-xl shadow-lg text-center">
+
+            <img src="https://picsum.photos/250/150?2"
+                class="rounded-lg mb-4">
+
+            <h2 class="text-2xl font-semibold mb-2">
+                Flexbox Layout
+            </h2>
+
+            <p class="text-gray-600 mb-4">
+                Learn powerful layout techniques with Flexbox.
+            </p>
+
+            <button class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded">
+                Read More
+            </button>
+
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white w-[250px] p-5 rounded-xl shadow-lg text-center">
+
+            <img src="https://picsum.photos/250/150?3"
+                class="rounded-lg mb-4">
+
+            <h2 class="text-2xl font-semibold mb-2">
+                Responsive Design
+            </h2>
+
+            <p class="text-gray-600 mb-4">
+                Make websites mobile-friendly and responsive.
+            </p>
+
+            <button class="bg-purple-500 hover:bg-purple-600 text-white px-5 py-2 rounded">
+                Read More
+            </button>
+
+        </div>
+
+    </section>
 </body>
 </html>

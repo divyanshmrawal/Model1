@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Flexbox Demonstration</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen p-6">
+
+    <div class="max-w-5xl mx-auto space-y-8">
+        
+        <header class="text-center">
+            <h1 class="text-3xl font-bold text-gray-800">Tailwind CSS Flexbox Demo</h1>
+            <p class="text-gray-600 mt-2">A quick guide to alignment, direction, and spacing using Flexbox utility classes.</p>
+        </header>
+
+        <section class="bg-white p-4 rounded-xl shadow-md">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">1. Navbar (Space-Between & Center)</h2>
+
+            <nav class="flex justify-between items-center bg-blue-600 p-4 rounded-lg text-white">
+                <div class="font-bold text-xl">MyLogo</div>
+                <ul class="flex gap-6 font-medium">
+                    <li class="hover:underline cursor-pointer">Home</li>
+                    <li class="hover:underline cursor-pointer">About</li>
+                    <li class="hover:underline cursor-pointer">Services</li>
+                    <li class="hover:underline cursor-pointer">Contact</li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="bg-white p-4 rounded-xl shadow-md">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">2. Perfect Centering (Horizontal & Vertical)</h2>
+
+            <div class="flex justify-center items-center h-40 bg-gray-800 rounded-lg">
+                <div class="bg-emerald-500 text-white font-bold p-6 rounded-lg shadow-lg">
+                    I am perfectly centered!
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 rounded-xl shadow-md">
+            <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">3. Responsive Direction & Wrap (Cards)</h2>
+
+            <div class="flex flex-col sm:flex-row flex-wrap gap-4 text-center">
+                
+                <div class="flex-1 min-w-[200px] bg-purple-100 p-6 border-2 border-purple-300 rounded-lg">
+                    <h3 class="font-bold text-purple-800">Card One</h3>
+                    <p class="text-sm text-purple-600 mt-1">Flex grow helper active.</p>
+                </div>
+
+                <div class="flex-1 min-w-[200px] bg-orange-100 p-6 border-2 border-orange-300 rounded-lg">
+                    <h3 class="font-bold text-orange-800">Card Two</h3>
+                    <p class="text-sm text-orange-600 mt-1">Flex grow helper active.</p>
+                </div>
+
+                <div class="flex-1 min-w-[200px] bg-pink-100 p-6 border-2 border-pink-300 rounded-lg">
+                    <h3 class="font-bold text-pink-800">Card Three</h3>
+                    <p class="text-sm text-pink-600 mt-1">Flex grow helper active.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
